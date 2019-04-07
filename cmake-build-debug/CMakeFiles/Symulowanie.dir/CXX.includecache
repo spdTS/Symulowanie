@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/seba/Desktop/Programowanie/SPD/Symulowanie/main.cpp
+iostream
+-
+string
+-
+cstdlib
+-
+fstream
+-
+vector
+-
+algorithm
+-
+cmath
+-
+
