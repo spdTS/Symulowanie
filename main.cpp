@@ -149,6 +149,8 @@ double Propabilityfunction(double piactually, double pinext, double temperature)
 
 int main() {
     Job object;
+    int tabaverage[100];
+    int incrementaverage=0;
     double temperaturestart=0;
     double temperatureend = 0;
     double coeficient = 0;
@@ -210,13 +212,24 @@ int main() {
             {
                 firstpropability=actualypropability;
                 piactually=pinext;
+                tabaverage[incrementaverage]=piactually;
+
+
+                incrementaverage++;
             }
         }
         tmpiteration++;
        // cout<< "Wspolczynnik prawdopodo to: "<<actualypropability<<endl;
      //   cout<< "Wartosc wyrzarzania to: "<<pinext<<endl;
     }
-    cout << "CMAX otrzymany z algorytmu wyrzarzania to: " << piactually << endl;
+      int average=0;
+    for(int i=1;i<incrementaverage;i++)
+    {
+        average=average+tabaverage[i];
+
+    }
+    average=(average/incrementaverage);
+    cout << "CMAX otrzymany z algorytmu wyrzarzania to: " << average << endl;
     */
 /*******************************************************************************/
 /* Część z wykorzystaniem insertu */
@@ -239,16 +252,27 @@ int main() {
         } else{
             if(firstpropability>actualypropability)
             {
+
                 firstpropability=actualypropability;
                 piactually=pinext;
+                tabaverage[incrementaverage]=piactually;
+
+
+                incrementaverage++;
             }
         }
         tmpiteration++;
-        cout<<"Liczba iteracji: "<<tmpiteration<<endl;
+       // cout<<"Liczba iteracji: "<<tmpiteration<<endl;
         // cout<< "Wspolczynnik prawdopodo to: "<<actualypropability<<endl;
         //   cout<< "Wartosc wyrzarzania to: "<<pinext<<endl;
     }
-    cout << "CMAX otrzymany z algorytmu wyrzarzania to: " << piactually << endl;
+    int average=0;
+    for(int i=1;i<incrementaverage;i++)
+    {
+        average=average+tabaverage[i];
+    }
+    average=(average/incrementaverage);
+    cout << "CMAX otrzymany z algorytmu wyrzarzania to: " << average << endl;
 
     return 0;
 }
